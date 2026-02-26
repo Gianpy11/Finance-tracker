@@ -1,0 +1,62 @@
+# ============================================================
+# BUILD ARTIFACTS
+# ============================================================
+build/
+out/
+cmake-build-*/
+*.o
+*.a
+*.so
+*.dll
+*.exe
+
+# ============================================================
+# VCPKG (installiamo le dipendenze, non le vendiamo)
+# Tracciamo solo vcpkg.json (il manifest) e vcpkg-configuration.json
+# ============================================================
+vcpkg/
+!vcpkg/scripts/buildsystems/vcpkg.cmake
+
+# ============================================================
+# IDE & EDITOR
+# ============================================================
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+
+# ============================================================
+# CMake generated files
+# ============================================================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# ============================================================
+# DATA FILES (contengono dati utente, non codice)
+# ============================================================
+backend/data/*.csv
+backend/data/*.json
+my_expenses.json
+
+# ============================================================
+# NODE / REACT (frontend)
+# ============================================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+
+# ============================================================
+# OS FILES
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
