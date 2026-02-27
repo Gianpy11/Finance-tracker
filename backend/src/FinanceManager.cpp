@@ -3,7 +3,6 @@
 #include <nlohmann/json.hpp>
 #include "FinanceManager.h"
 
-using json = nlohmann::json;
 
 bool FinanceManager::loadFromFile()
 {
@@ -13,7 +12,7 @@ bool FinanceManager::loadFromFile()
         return false;
     }
     
-    json dataJson;
+    nlohmann::json dataJson;
     in_file >> dataJson;
 
     for (const auto& el: dataJson) {
@@ -47,10 +46,10 @@ bool FinanceManager::saveToFile()
         return false;
     }
 
-    json j_list = json::array();
+    auto j_list = nlohmann::json::array();
 
     for (const auto& expense: myExpenses) {
-        json item;
+        nlohmann::json item;
         item["id"] = expense.getId();
         item["amount"] = expense.getAmount();
         item["category"] = expense.getCategory();
