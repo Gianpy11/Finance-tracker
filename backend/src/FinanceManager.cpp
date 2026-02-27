@@ -9,7 +9,7 @@ bool FinanceManager::loadFromFile()
 {
     std::ifstream in_file(filePath);
     if (!in_file) {
-        std::cerr << "Error opening file during loading" << std::endl;
+        std::cerr << "No existing data file found" << std::endl;
         return false;
     }
     
@@ -25,6 +25,10 @@ bool FinanceManager::loadFromFile()
 
         if (el.contains("description")) {
             tmp_description = el["description"];
+        }
+
+        if (maxId < tmp_id) {
+            maxId = tmp_id;
         }
         
         Expense newExpense(tmp_id, tmp_amount, tmp_category, tmp_date, tmp_description);
