@@ -37,6 +37,10 @@ class FinanceManager
             return myExpenses.size();
         }
 
+        const std::vector<Expense>& getExpenses() const {
+            return myExpenses;
+        }
+
     private:
         std::vector<Expense> myExpenses;
         std::string filePath;
